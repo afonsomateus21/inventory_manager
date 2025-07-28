@@ -1,0 +1,38 @@
+# Ambiente virtual (ajuste o nome conforme necessário)
+env/
+venv/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Arquivos de configuração do VSCode (caso esteja usando)
+.vscode/
+
+# Arquivos de log
+*.log
+
+# Arquivos de relatório
+*.csv
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.swp
+*.bak
+*.tmp
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# arquivos criados automaticamente
+*.egg-info/
+dist/
+build/
