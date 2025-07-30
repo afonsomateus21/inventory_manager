@@ -197,6 +197,35 @@ def make_sale():
       print("Produto não encontrado!")
       return
     
+    if product.get_is_perishable() and product.is_expired():
+      days_expired = abs(product.days_until_expiration())
+      print(f"❌ VENDA BLOQUEADA: Produto '{product.get_name()}' está VENCIDO!")
+      print(f"   Data de validade: {product.get_expiration_date().strftime('%d/%m/%Y')}")
+      print(f"   Vencido há {days_expired} dia(s)")
+      print("   Para vendê-lo, remova-o do estoque primeiro.")
+      print()
+      continue 
+    
+    if product.get_is_perishable():
+      days_until_expiration = product.days_until_expiration()
+      if 0 <= days_until_expiration <= 7:
+        print(f"⚠️  ATENÇÃO: Produto '{product.get_name()}' vence em {days_until_expiration} dia(s)!")
+        print(f"   Data de validade: {product.get_expiration_date().strftime('%d/%m/%Y')}")
+        
+        confirm_sale = safe_input_yes_no("Deseja continuar com a venda? (s/n): ")
+        if confirm_sale is None or not confirm_sale:
+          print("Venda cancelada pelo usuário.")
+          continue
+        print()
+    
+    print(f"Produto encontrado: {product.get_name()}")
+    print(f"   Preço: R$ {product.get_price():.2f}")
+    print(f"   Disponível: {product.get_quantity()} unidades")
+    if product.get_is_perishable():
+      print(f"   Validade: {product.get_expiration_date().strftime('%d/%m/%Y')}")
+    else:
+      print("   Produto não perecível")
+    
     quantity = safe_input_number("Digite a quantidade: ", int, Validators.validate_quantity_for_sale, product.get_quantity())
     if quantity is None:
       return
@@ -207,6 +236,10 @@ def make_sale():
 
     sale_item = SaleItem(product=product, quantity=quantity)
     sale_items.append(sale_item)
+    
+    print(f"{quantity} unidade(s) de '{product.get_name()}' adicionada(s) ao carrinho.")
+    print(f"   Subtotal: R$ {sale_item.get_subtotal():.2f}")
+    print()
 
     show_selling_options_menu()
     sale_option = safe_input_number("Digite a opção desejada: ", int)
@@ -215,6 +248,20 @@ def make_sale():
 
     if sale_option == 2:
       keep_selling = False
+
+  if not sale_items:
+    print("Nenhum item foi adicionado à venda.")
+    return
+
+  total_venda = sum(item.get_subtotal() for item in sale_items)
+  print("\n" + "=" * 40)
+  print("RESUMO DA VENDA:")
+  for item in sale_items:
+    product = item.get_product()
+    print(f"- {product.get_name()} x{item.get_quantity()} = R$ {item.get_subtotal():.2f}")
+  print("-" * 40)
+  print(f"TOTAL: R$ {total_venda:.2f}")
+  print("=" * 40)
 
   seller_name = safe_input("Digite o nome do vendedor(a): ", Validators.validate_seller_name)
   if seller_name is None:
@@ -236,7 +283,9 @@ def make_sale():
   is_sale_made = sales_repository.make_sale(sale)
 
   if is_sale_made:
-    print("Venda realizada com sucesso!")
+    print("\nVenda realizada com sucesso!")
+    print(f"Total: R$ {sale.get_total():.2f}")
+    print(f"Data: {now.strftime('%d/%m/%Y %H:%M:%S')}")
   else:
     print("Erro ao realizar a venda")
 
