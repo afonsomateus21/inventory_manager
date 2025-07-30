@@ -15,6 +15,12 @@ __pycache__/
 
 # Arquivos de relatório
 *.csv
+sales_report_*.txt
+expiration_report_*.txt
+
+# Arquivos de dados
+inventory.json
+sales.json
 
 # Arquivos de sistema
 .DS_Store
