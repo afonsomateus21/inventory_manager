@@ -1,0 +1,21 @@
+def show_options_menu():
+  print("\n========== Escolha uma das opções abaixo ==========")
+  print("1 - Inserir produto no estoque")
+  print("2 - Atualizar produto")
+  print("3 - Vender produto")
+  print("4 - Pesquisar produto pelo código de barras")
+  print("5 - Busca avançada de produtos")
+  print("6 - Mostrar o estoque")
+  print("7 - Mostrar relatório de vendas")
+  print("8 - Gerar relatório de vendas em txt")
+  print("9 - Gerar relatório de vendas em csv")
+  print("10 - Mostrar relatório de validade")
+  print("11 - Gerar relatório de validade em txt")
+  print("12 - Gerar relatório de validade em csv")
+  print("13 - Remover produtos vencidos")
+  print("14 - Sair")
+
+def show_selling_options_menu():
+  print("\n========== Escolha uma das opções abaixo ==========")
+  print("1 - Continuar comprando")
+  print("2 - Finalizar compra")

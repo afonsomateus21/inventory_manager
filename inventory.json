@@ -1,0 +1,80 @@
+[
+  {
+    "id": "a6f1f098-126d-4166-a03b-48e8ccbf26f8",
+    "name": "Leite",
+    "description": "Leite ninho",
+    "price": 10.0,
+    "brand": "Ninho",
+    "quantity": 60,
+    "barcode": "123",
+    "created_at": "2025-07-28T19:51:00.039988",
+    "updated_at": "2025-07-28T19:51:15.278865",
+    "is_perishable": true,
+    "expiration_date": "2025-10-08"
+  },
+  {
+    "id": "b2daa454-944f-40a1-bcb9-a02c8b800d1e",
+    "name": "Sabonete",
+    "description": "Barra",
+    "price": 1.22,
+    "brand": "Dove",
+    "quantity": 20,
+    "barcode": "1234",
+    "created_at": "2025-07-30T09:34:32.360609",
+    "updated_at": "2025-07-30T09:34:32.360609",
+    "is_perishable": false,
+    "expiration_date": null
+  },
+  {
+    "id": "72a81cc9-b8f3-4dbc-9fbf-1ed010fe06ff",
+    "name": "Sopa",
+    "description": "Self-service",
+    "price": 12.99,
+    "brand": "Fabricação Própria",
+    "quantity": 5,
+    "barcode": "123456",
+    "created_at": "2025-07-30T09:47:48.960919",
+    "updated_at": "2025-07-30T09:47:48.960919",
+    "is_perishable": true,
+    "expiration_date": "2025-07-31"
+  },
+  {
+    "id": "17322a50-ff21-4ac2-b5a0-818ef7c8c0f0",
+    "name": "Sushi",
+    "description": "self-service",
+    "price": 49.99,
+    "brand": "Fabricação Própria",
+    "quantity": 76,
+    "barcode": "8749",
+    "created_at": "2025-07-30T09:50:07.163155",
+    "updated_at": "2025-07-30T09:50:07.163155",
+    "is_perishable": true,
+    "expiration_date": "2025-08-20"
+  },
+  {
+    "id": "98a2c9c2-908c-4e96-99b2-6e4ef99d81f3",
+    "name": "Salgadinho",
+    "description": "Lays",
+    "price": 8.99,
+    "brand": "Lays",
+    "quantity": 20,
+    "barcode": "6396",
+    "created_at": "2025-07-30T09:57:56.141028",
+    "updated_at": "2025-07-30T09:57:56.141028",
+    "is_perishable": true,
+    "expiration_date": "2025-07-31"
+  },
+  {
+    "id": "74b11ac2-4c7b-49bf-a026-3e791881de78",
+    "name": "Sushi",
+    "description": "peixe cru",
+    "price": 79.99,
+    "brand": "Fabricação Própria",
+    "quantity": 58,
+    "barcode": "183733",
+    "created_at": "2025-07-30T09:58:41.312638",
+    "updated_at": "2025-07-30T09:58:41.312638",
+    "is_perishable": true,
+    "expiration_date": "2025-07-30"
+  }
+]
